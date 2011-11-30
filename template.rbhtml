@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>${@title}</title>
+
+  <style type="text/css" media="all">
+    #image {
+      width: ${@width}px;
+      height: ${@height}px;
+    }
+    
+      #image div {
+        height: 1px;
+        width: 1px;
+        float: left;
+      }
+    
+    <?rb for color in @colors ?>
+      .c${color} { background-color: #${color}; }
+    <?rb end ?>
+  </style>
+</head>
+<body>
+  <div id="image">
+    <?rb for pixel in @pixels ?>
+      <div class="c${pixel}"></div>
+    <?rb end ?>
+  </div>
+</body>
+</html>
